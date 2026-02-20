@@ -9,7 +9,7 @@ class DataExchange:
 
     geometryData, usedFaces = GeometryIO.gather_geometry_data(meshes, localOptions)
     binaryData = bytearray()
-    interfaceVersion = (1, 0, 0)
+    interfaceVersion = (1, 1, 0)
     binaryData += (interfaceVersion[0]).to_bytes(4, byteorder="little")
     binaryData += (interfaceVersion[1]).to_bytes(4, byteorder="little")
     binaryData += (interfaceVersion[2]).to_bytes(4, byteorder="little")
@@ -73,6 +73,7 @@ class DataExchange:
     data += bytearray(struct.pack("<?", options["PreRotate"]))
     data += bytearray(struct.pack("<?", options["FullRotation"]))
     data += (options["Rotation"]).to_bytes(4, byteorder="little")
+    data += bytearray(struct.pack("<?", options["DynamicTiling"]))
     data += (options["TilesX"]).to_bytes(4, byteorder="little")
     data += (options["TilesY"]).to_bytes(4, byteorder="little")
     return data

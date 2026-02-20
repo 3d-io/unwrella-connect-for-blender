@@ -93,6 +93,7 @@ class UnwrellaPanel(bpy.types.Panel):
       row = layout.row(align=True)
       row.prop(unwrellaProps, "uio_use_density")
       row.prop(unwrellaProps, "uio_density", text="")
+      layout.prop(unwrellaProps, "uio_dynamicTiling")
       layout.separator()
 
       layout.label(text="UV Packing Engine:", icon="MESH_GRID")

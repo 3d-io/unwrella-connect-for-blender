@@ -22,8 +22,6 @@ def active_obj_callback():
       area.tag_redraw()
 
 def register():
-  unwrellaParams["appPath"], unwrellaParams["AppAccess"] = Util.get_app_path()
-
   bpy.msgbus.subscribe_rna(
     key=(bpy.types.LayerObjects, 'active'),
     owner=subscriptionOwner,
@@ -36,6 +34,8 @@ def register():
     registered_classes.append(cls)
   bpy.types.Scene.UnwrellaProps = bpy.props.PointerProperty(type=UnwrellaProperties)
   bpy.types.Object.UnwrellaObjProps = bpy.props.PointerProperty(type=UnwrellaObjectProperties)
+
+  unwrellaParams["appPath"], unwrellaParams["AppAccess"] = Util.get_app_path()
 
   iconCol = bpy.utils.previews.new()
   iconsDir = os.path.join(os.path.dirname(__file__), "icons")

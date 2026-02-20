@@ -53,6 +53,7 @@ class Processing:
       "PreRotate": unwrella_props.uio_prerotate,
       "FullRotation": unwrella_props.uio_fullRotate,
       "Rotation": int(unwrella_props.uio_rotate),
+      "DynamicTiling": unwrella_props.uio_dynamicTiling,
       "TilesX": unwrella_props.uio_tilesX,
       "TilesY": unwrella_props.uio_tilesY,
     }
@@ -70,6 +71,7 @@ class Processing:
         "PreRotate": unwrella_props.bl_rna.properties['uio_prerotate'].default,
         "FullRotation": unwrella_props.bl_rna.properties['uio_fullRotate'].default,
         "Rotation": int(unwrella_props.bl_rna.properties['uio_rotate'].default),
+        "DynamicTiling": unwrella_props.bl_rna.properties['uio_dynamicTiling'].default,
         "TilesX": unwrella_props.bl_rna.properties['uio_tilesX'].default,
         "TilesY": unwrella_props.bl_rna.properties['uio_tilesY'].default,
       }

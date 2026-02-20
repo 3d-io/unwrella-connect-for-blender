@@ -13,6 +13,7 @@ class UnwrellaProperties(PropertyGroup):
     items=[
       ("0", "Efficient", "Best compromise for speed and space usage"),
       ("1", "High Quality", "Slowest but maximal space usage"),
+      ("2", "Turbo", "Fastest but leaves gaps and can't fill holes"),
     ],
     default="0"
   )
@@ -30,6 +31,7 @@ class UnwrellaProperties(PropertyGroup):
     default="1"
   )
   uio_fullRotate: BoolProperty(name="Ø", description="Allow full 360° UV rotation; slower but can improve packing.", default=False)
+  uio_dynamicTiling: BoolProperty(name="Dynamic Tiling", description="Determine the number of tiles dynamically based on density.", default=False)
   uio_tilesX: IntProperty(name="Tiles X:", description="UV Tile Columns", default=1, min=1)
   uio_tilesY: IntProperty(name="Tiles Y:", description="UV Tile Rows", default=1, min=1)
   uio_create_channel: BoolProperty(name="Create new map channel", description="Store UV results in a new map channel.", default=False)
